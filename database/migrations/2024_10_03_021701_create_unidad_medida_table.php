@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('unidad_medida', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('id'); // Llave primaria, auto incrementable
+            $table->string('nombre', 255)->collation('utf8mb4_unicode_ci'); // Columna nombre, tipo varchar(255)
+            $table->string('prefijo', 255)->collation('utf8mb4_unicode_ci'); // Columna prefijo, tipo varchar(255)
+            $table->timestamp('created_at')->nullable(); // Columna created_at con timestamp
+            $table->timestamp('updated_at')->nullable(); // Columna updated_at con timestamp
         });
     }
 

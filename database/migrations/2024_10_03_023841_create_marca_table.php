@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('marca', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // Crea una columna `id` autoincremental
+            $table->string('nombre', 255)->collate('utf8mb4_unicode_ci')->notNullable(); // Columna `nombre` con collation
+            $table->timestamps(); // Crea columnas `created_at` y `updated_at`
         });
     }
 

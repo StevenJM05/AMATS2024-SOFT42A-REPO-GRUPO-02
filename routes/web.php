@@ -30,3 +30,10 @@ Route::get('/unidadesMedida', [UnidadMedidaController::class, 'index'])->name('u
 Route::post('/unidadesMedida', [UnidadMedidaController::class, 'store'])->name('unidadesMedida.store');
 Route::put('/unidadesMedida/{id}', [UnidadMedidaController::class, 'update'])->name('unidadesMedida.update');
 Route::delete('/unidadesMedida/{id}', [UnidadMedidaController::class, 'update'])->name('unidadesMedida.destroy');
+
+//Rutas de producto
+Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
+Route::put('/productos/{id}', [ProductoController::class, 'update'])->name('productos.update');
+Route::delete('/productos/{id}', [ProductoController::class, 'destroy'])->name('productos.destroy');
+Route::get('search-products', [ProductoController::class, 'search'])->name('search-products');

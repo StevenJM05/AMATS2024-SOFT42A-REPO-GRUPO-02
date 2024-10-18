@@ -33,3 +33,10 @@ Route::delete('/unidadesMedida/{id}', [UnidadMedidaController::class, 'update'])
 
 //Kardex
 Route::get('/kardex', [KardexController::class, 'index'])->name('kardex.index');
+
+//Rutas de producto
+Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
+Route::put('/productos/{id}', [ProductoController::class, 'update'])->name('productos.update');
+Route::delete('/productos/{id}', [ProductoController::class, 'destroy'])->name('productos.destroy');
+Route::get('search-products', [ProductoController::class, 'search'])->name('search-products');

@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ventas_items', function (Blueprint $table) {
+        Schema::create('kardex_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('venta_id')->constrained('ventas')->onDelete('cascade');
-            $table->foreignId('producto_id')->constrained('productos')->onDelete('cascade');
+            $table->ForeignId('kardex_id')->constrained('Kardex')->onDelete('cascade');
+            $table->ForeignId('producto_id')->constrained('Productos')->onDelete('cascade');
             $table->unsignedBigInteger('cantidad');
-            $table->float('precio_unidad');
-            $table->float('impuesto');
-            $table->float('total');
+            $table->float('precio_unitario', 8, 2);
+            $table->float('total', 8, 2);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ventas_items');
+        Schema::dropIfExists('kardex_items');
     }
 };

@@ -12,10 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('impuestos', function (Blueprint $table) {
-            $table->id(); // Crea la columna `id` como BIGINT UNSIGNED AUTO_INCREMENT
-            $table->float('porcentaje'); // Columna para el porcentaje del impuesto
-            $table->string('nombre', 255)->nullable(); // Columna para el nombre del impuesto, puede ser NULL
-            $table->timestamps(); // Crea las columnas `created_at` y `updated_at`
+            $table->id();
+            $table->float('porcentaje', 8, 2);
+            $table->timestamps();
         });
     }
 

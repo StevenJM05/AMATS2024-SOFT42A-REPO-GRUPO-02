@@ -50,4 +50,3 @@ class CategoriaController extends Controller
         return redirect()->route('categorias.index')->with('success', 'Categoría eliminada exitosamente.');
     }
 }
-

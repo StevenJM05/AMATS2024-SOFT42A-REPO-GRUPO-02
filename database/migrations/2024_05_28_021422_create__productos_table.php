@@ -13,17 +13,15 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->string('codigo')->collate('utf8mb4_unicode_ci');
-            $table->string('nombre')->collate('utf8mb4_unicode_ci');
-            $table->string('descripcion')->collate('utf8mb4_unicode_ci');
-            $table->foreignId('marca_id')->constrained('marca')->onDelete('cascade');
-            $table->foreignId('categorias_id')->constrained('categorias')->onDelete('cascade');
-            $table->foreignId('Unidad_medida_id')->constrained('unidad_medida')->onDelete('cascade');
+            $table->string('codigo');
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->ForeignId('marca_id')->constrained('marca');
+            $table->ForeignId('categorias_id')->constrained('categorias');
+            $table->ForeignId('Unidad_medida_id')->constrained('unidad_medida');
             $table->boolean('is_available')->default(true);
             $table->unsignedBigInteger('stock');
             $table->timestamps();
-            $table->foreignId('impuesto_id')->nullable()->constrained('impuestos')->onDelete('set null');
-            $table->float('precio');
         });
     }
 

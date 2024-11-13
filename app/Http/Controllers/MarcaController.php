@@ -42,4 +42,3 @@ class MarcaController extends Controller
         return redirect()->route('marcas.index')->with('success', 'Marca eliminada exitosamente');
     }
 }
-

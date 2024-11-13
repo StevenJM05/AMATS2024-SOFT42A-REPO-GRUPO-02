@@ -187,4 +187,3 @@ class VentaController extends Controller
         ]);
     }
 }
-
